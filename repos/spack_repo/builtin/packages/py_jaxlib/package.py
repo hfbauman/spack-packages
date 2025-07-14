@@ -244,7 +244,7 @@ class PyJaxlib(PythonPackage, CudaPackage, ROCmPackage):
                 args.append("--wheels=jaxlib")
 
         if spec.satisfies("@0.4.32:"):
-            if spec.satisfies("%clang"):
+            if spec.satisfies("%c,cxx=clang"):
                 args.append("--use_clang=true")
             else:
                 args.append("--use_clang=false")
