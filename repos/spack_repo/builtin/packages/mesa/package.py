@@ -166,6 +166,8 @@ class Mesa(MesonPackage):
 
     patch("0001-disable-gallivm-coroutine-for-libllvm15.patch", when="@22.1.2:22.3 ^libllvm@15")
 
+    # patch("fix_llvm.patch")
+
     # Explicitly use the llvm-config tool
     def patch(self):
         filter_file(r"_llvm_method = 'auto'", "_llvm_method = 'config-tool'", "meson.build")
@@ -218,7 +220,7 @@ class MesonBuilder(meson.MesonBuilder):
             args.append("-Dgallium-omx=disabled")
 
         args_platforms = []
-        args_gallium_drivers = ["swrast"]
+        args_gallium_drivers = ["softpipe"]
         args_dri_drivers = []
 
         opt_enable = lambda c, o: "-D%s=%sabled" % (o, "en" if c else "dis")
