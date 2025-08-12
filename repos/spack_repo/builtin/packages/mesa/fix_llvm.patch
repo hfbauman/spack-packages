@@ -1,0 +1,11 @@
+--- a/meson_options.txt       2025-07-14 08:44:32
++++ b/meson_options.txt   2025-07-14 08:44:56
+@@ -82,7 +82,7 @@
+     'auto', 'radeonsi', 'r300', 'r600', 'nouveau', 'freedreno',
+     'swrast', 'v3d', 'vc4', 'etnaviv', 'tegra', 'i915', 'svga', 'virgl',
+     'panfrost', 'iris', 'lima', 'zink', 'd3d12', 'asahi', 'crocus', 'all',
+-    'softpipe', 'llvmpipe',
++    'softpipe', 
+   ],
+   description : 'List of gallium drivers to build. If this is set to auto ' +
+                 'all drivers applicable to the target OS/architecture ' +
