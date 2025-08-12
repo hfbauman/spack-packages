@@ -105,6 +105,7 @@ class Opencascade(CMakePackage):
 
     depends_on("vtk", when="+vtk")
     depends_on("vtk", when="@7.6 +vtk")
+    depends_on("mesa~llvm+glx~osmesa", type=("build", "link"), when="+vtk")
 
     depends_on("ffmpeg", when="+ffmpeg")
     depends_on("freeimage", when="+freeimage")
